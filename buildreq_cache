@@ -1,0 +1,5 @@
+0.047
+perl(ExtUtils::Depends)
+perl(ExtUtils::PkgConfig)
+perl(Glib)
+pkgconfig(cairo)
