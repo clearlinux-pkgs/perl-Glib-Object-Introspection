@@ -4,7 +4,7 @@
 #
 Name     : perl-Glib-Object-Introspection
 Version  : 0.049
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.049.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.049.tar.gz
 Summary  : 'Dynamically create Perl language bindings'
