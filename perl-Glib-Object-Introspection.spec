@@ -4,7 +4,7 @@
 #
 Name     : perl-Glib-Object-Introspection
 Version  : 0.049
-Release  : 15
+Release  : 16
 URL      : https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.049.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.049.tar.gz
 Summary  : 'Dynamically create Perl language bindings'
@@ -119,6 +119,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Glib/Object/Introspection.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Glib/Object/Introspection/Install/Files.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/Glib/Object/Introspection/Introspection.so
+/usr/lib/perl5/*
