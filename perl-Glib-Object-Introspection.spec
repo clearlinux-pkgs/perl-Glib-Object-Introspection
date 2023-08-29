@@ -4,10 +4,10 @@
 # Using build pattern: cpan
 #
 Name     : perl-Glib-Object-Introspection
-Version  : 0.050
-Release  : 19
-URL      : https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.050.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.050.tar.gz
+Version  : 0.051
+Release  : 20
+URL      : https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.051.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.051.tar.gz
 Summary  : 'Dynamically create Perl language bindings'
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -78,8 +78,11 @@ perl components for the perl-Glib-Object-Introspection package.
 
 
 %prep
-%setup -q -n Glib-Object-Introspection-0.050
-cd %{_builddir}/Glib-Object-Introspection-0.050
+%setup -q -n Glib-Object-Introspection-0.051
+cd %{_builddir}/Glib-Object-Introspection-0.051
+pushd ..
+cp -a Glib-Object-Introspection-0.051 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -87,7 +90,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
 if test -f Makefile.PL; then
-%{__perl} Makefile.PL
+%{__perl} -I. Makefile.PL
 make  %{?_smp_mflags}
 else
 %{__perl} Build.PL
@@ -114,6 +117,7 @@ find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
 find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %{_fixperms} %{buildroot}/*
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
